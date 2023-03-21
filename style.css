@@ -27,12 +27,12 @@
     align-items: center;
     flex-direction: column;
     gap: 1em;
-    /* width: 300px; */
-    padding: 1em;
+    padding: 1.5em 1em;
     border-radius: 20px;
     background-color: var(--background1);
     color: var(--text);
-    transform: 1s;
+    animation: fadeIn .5s;
+
 
 }
 
@@ -48,6 +48,7 @@
     align-items: center;
     gap: 0.5em;
 }
+
 .container-btnRemove{
     display: flex;
     flex-direction: column;
@@ -55,10 +56,9 @@
     justify-content: space-around;
 }
 
-
-
 .container-podio {
     width: 100%;
+    animation: fadeIn 1s;
 }
 
 .podio {
@@ -105,6 +105,8 @@
     border: 2px solid var(--color2);
     border-radius: 16px;
     color: var(--text);
+    animation: fadeIn .5s ease-in-out;
+
 }
 
 .form-input:focus-visible {
@@ -129,12 +131,16 @@
     color: white;
 }
 
-.btnRemove, .button-add{
+.button-remove, .button-add{
     width: 25px;
     height: 25px;
     background: var(--color3);
     border-radius: 50%;
-    display: flex;
+}
+
+.button-remove{
+    display: none;
+    animation: fadeIn 1s;
 }
 
 .button-add {
@@ -147,4 +153,23 @@
     background-color: var(--color2);
     border-radius: 16px;
     padding: .5em 1em;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes widthFull {
+    0% {
+        width: 300px;
+    }
+
+    100% {
+        width: 335px;
+    }
 }
