@@ -16,6 +16,17 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
+function verificarInputs(){
+    const formInput = document.querySelectorAll(".form-input");
+    var inputNull = 0
+    for (let i = 0; i < formInput.length; i++) {
+        if( formInput[i].value.trim() == ''){
+            inputNull ++;
+        }
+    }
+    inputNull >= 1 ? console.log('no ha completado todos los participantess') : sortear();
+}
+
 function sortear(){
     const formInput = document.querySelectorAll(".form-input");
     let sorteo = []
@@ -60,7 +71,6 @@ function sortear(){
     }
 
     containerPodio.removeAttribute('hidden');
-
 }
 
 function addParticipante(){
@@ -82,11 +92,8 @@ function addParticipante(){
     participante.appendChild(input);
     participante.appendChild(btnRemove);
 
-
-    // input.autofocus = true;
     containerParticipantes.appendChild(participante);
-    // addBtnRemove();
-    // containerParticipantes.lastChild.removeAttribute('autofocus')
+
 }
 
 function addBtnRemove(){
@@ -97,7 +104,6 @@ function addBtnRemove(){
         btnRemove.className = 'btnRemove';
         btnRemove.innerHTML = 'x'
         containerParticipantes.appendChild(btnRemove);
-        
     }
 }
 
