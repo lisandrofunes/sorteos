@@ -23,7 +23,7 @@
 
     <div class="container-bg">
         <div class="container">
-            <form class="form-sorteo">
+            <div class="form-sorteo">
                 <h1>Sorteo</h1>
                 <div class="container-podio" hidden>
                     <div class="podio podio-one">
@@ -45,19 +45,20 @@
 
                 <div class="container-participantes">
                     <div id="p1" class="participante">
-                        <input type="text" class="form-input input1" placeholder="Participante">
+                        <input id="i1" type="text" class="form-input input1" placeholder="Participante">
                         <div class="button button-remove" onclick="removeParticipante(1)">x</div>
                     </div>
                     <div id="p2" class="participante">
-                        <input type="text" class="form-input input2" placeholder="Participante">
+                        <input id="i2" type="text" class="form-input input2" placeholder="Participante">
                         <div class="button button-remove" onclick="removeParticipante(2)">x</div>
                     </div>
                 </div>
                 <div class="container-buttons">
-                    <div class="button button-add" onclick="addParticipante()">+</div>
+                    <button class="button button-add" onclick="addParticipante()">+</button>
+                    <!-- " -->
                     <div class="button button-sortear" onclick="sortear()">Sortear</div>
                 </div>
-            </form>
+            </div>
 
             <div class="toast-container position-fixed top-0 end-0 p-3">
                 <div id="liveToast" class="toast bg-secondary text-light" role="alert" aria-live="assertive" aria-atomic="true">

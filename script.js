@@ -1,6 +1,8 @@
 const containerParticipantes = document.querySelector(".container-participantes");
 const containerPodio = document.querySelector(".container-podio");
 
+const buttonAdd = document.querySelector('.button-add');
+
 const toastLive = document.getElementById('liveToast');
 
 const input1 = document.querySelector(".input1");
@@ -28,6 +30,7 @@ function verificarInputs() {
         if (formInput[i].value.trim() == '') {
             inputNull = true;
         }
+        formInput[i].removeAttribute('autofocus');
     }
     return inputNull;
     // inputNull >= 1 ? console.log('no ha completado todos los participantess') : sortear();
@@ -79,14 +82,19 @@ function sortear() {
         }
 
         containerPodio.removeAttribute('hidden');
-        
+
     } else {
         const toast = new bootstrap.Toast(toastLive);
         toast.show();
     }
 }
 
+buttonAdd.addEventListener('click', function(){
+    
+})
+
 function addParticipante() {
+
     if (verificarInputs() == false) {
         nParticipant++;
         const participante = document.createElement('div');
@@ -94,9 +102,11 @@ function addParticipante() {
         participante.className = 'participante';
 
         const input = document.createElement('input');
+        input.id = 'i'+nParticipant;
         input.type = 'text';
         input.className = 'form-input';
         input.placeholder = 'Participante';
+        input.autofocus = true;
 
         const btnRemove = document.createElement('div');
         btnRemove.className = 'button button-remove';
@@ -107,14 +117,16 @@ function addParticipante() {
         participante.appendChild(btnRemove);
 
         containerParticipantes.appendChild(participante);
+
         btnRemoveVisible(true);
         animation();
+        document.getElementById('i'+nParticipant).focus();
+
     } else {
         const toast = new bootstrap.Toast(toastLive);
         toast.show();
     }
 }
-
 function btnRemoveVisible(flag) {
     const btnRemoveAll = document.querySelectorAll(".button-remove")
 
