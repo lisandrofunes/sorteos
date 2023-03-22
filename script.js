@@ -14,7 +14,6 @@ document.addEventListener('keydown', (event) => {
     if (event.key == 'Tab') {
 
         if (input1.value != '' & input2.value != '') {
-            console.log('1: ' + input1.value + ', 2: ' + input2.value)
             addParticipante();
         }
     }
@@ -119,7 +118,6 @@ function animation() {
     const widthFormTo = formSorteo.clientWidth;
     const heightFormTo = formSorteo.clientHeight;
 
-    console.log(formSorteo.clientWidth)
     formSorteo.animate([
         { width: widthFormFrom + 'px', height: heightFormFrom + 'px' },
         { width: widthFormTo + 'px', height: heightFormTo + 'px' }
@@ -134,13 +132,25 @@ function animation() {
 
 function removeParticipante(x) {
     var participante = document.querySelector('#p' + x);
-    var padre = participante.parentNode;
-    padre.removeChild(participante);
-    nParticipant--;
 
-    if (nParticipant == 2) {
-        btnRemoveVisible(false);
-    }
+        participante.animate([
+            { opacity: 100 },
+            { opacity: 0 }
+        ], {
+            duration: 200,
+        });
 
-    animation();
+    setTimeout(() => {
+        var padre = participante.parentNode;
+        padre.removeChild(participante);
+        nParticipant--;
+
+        if (nParticipant == 2) {
+            btnRemoveVisible(false);
+        }
+        animation();
+
+    }, 200);
+
+
 }

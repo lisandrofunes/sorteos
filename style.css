@@ -27,13 +27,17 @@
     align-items: center;
     flex-direction: column;
     gap: 1em;
-    padding: 1.5em 1em;
+    padding: 5em 1em;
     border-radius: 20px;
     background-color: var(--background1);
     color: var(--text);
+    position: relative;
     animation: fadeIn .5s;
+}
 
-
+.form-sorteo h1{
+    position: absolute;
+    top: .5em;
 }
 
 .container-participantes {
@@ -119,7 +123,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: 1.5em;
 }
 
 .button {
@@ -132,21 +137,23 @@
 }
 
 .button-remove, .button-add{
-    width: 25px;
-    height: 25px;
-    background: var(--color3);
     border-radius: 50%;
 }
 
 .button-remove{
+    width: 25px;
+    height: 25px;
     display: none;
     animation: fadeIn 1s;
+    background: var(--color3);
 }
 
 .button-add {
+    width: 40px;
+    height: 40px;
     background-color: var(--color4);
     position: absolute;
-    left: 0;
+    left: 1em;
 }
 
 .button-sortear {
