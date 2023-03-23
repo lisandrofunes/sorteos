@@ -14,14 +14,11 @@ var heightFormFrom = formSorteo.clientHeight;
 
 var nParticipant = 2;
 
-document.addEventListener('keydown', (event) => {
-    if (event.key == 'Tab') {
-
-        if (input1.value.trim() != '' & input2.value.trim() != '') {
-            addParticipante();
-        }
-    }
-})
+// document.addEventListener('keydown', (event) => {
+//     if (event.key == 'Tab') {
+//         addParticipante();
+//     }
+// })
 
 function verificarInputs() {
     const formInput = document.querySelectorAll(".form-input");
@@ -89,9 +86,6 @@ function sortear() {
     }
 }
 
-buttonAdd.addEventListener('click', function(){
-    
-})
 
 function addParticipante() {
 
@@ -106,11 +100,11 @@ function addParticipante() {
         input.type = 'text';
         input.className = 'form-input';
         input.placeholder = 'Participante';
-        input.autofocus = true;
+        input.autocomplete = 'off'
 
         const btnRemove = document.createElement('div');
         btnRemove.className = 'button button-remove';
-        btnRemove.innerHTML = 'x'
+        btnRemove.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         btnRemove.setAttribute("onclick", "removeParticipante(" + nParticipant + ");");
 
         participante.appendChild(input);
@@ -120,6 +114,7 @@ function addParticipante() {
 
         btnRemoveVisible(true);
         animation();
+        
         document.getElementById('i'+nParticipant).focus();
 
     } else {
