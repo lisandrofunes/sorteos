@@ -14,12 +14,6 @@ var heightFormFrom = formSorteo.clientHeight;
 
 var nParticipant = 2;
 
-// document.addEventListener('keydown', (event) => {
-//     if (event.key == 'Tab') {
-//         addParticipante();
-//     }
-// })
-
 function verificarInputs() {
     const formInput = document.querySelectorAll(".form-input");
     var inputNull = false
