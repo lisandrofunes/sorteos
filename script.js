@@ -50,7 +50,7 @@ function sortear() {
         // eliminar inputs de nParticipant
         containerParticipantes.remove();
 
-        txtPodio = document.querySelector('.form-sorteo h1').innerHTML = 'Podio';
+        txtPodio = document.querySelector('.title').innerHTML = 'Podio';
 
         btnAdd = document.querySelector('.button-add').remove();
         btnSortear = document.querySelector('.button-sortear')
